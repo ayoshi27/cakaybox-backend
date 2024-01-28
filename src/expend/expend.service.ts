@@ -7,7 +7,7 @@ export class ExpendService {
   constructor(private prisma: PrismaService) {}
 
   /**
-   * 指定したパラメータで支出を取得する（findMany）
+   * 指定したパラメータで支出リストを取得する（findMany）
    * @param params - prismaのfindManyのパラメータ
    */
   async getList(params: {
@@ -24,6 +24,32 @@ export class ExpendService {
       cursor,
       where,
       orderBy,
+      include: {
+        category: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        payer: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        budget: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        paymentMethod: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+      },
     });
   }
 

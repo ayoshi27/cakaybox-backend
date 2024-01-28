@@ -10,7 +10,7 @@ import {
   TsRestRequest,
 } from '@ts-rest/nest';
 
-const c = nestControllerContract(contract);
+const c = nestControllerContract(contract.expends);
 type RequestShapes = NestRequestShapes<typeof c>;
 
 @Controller()
@@ -28,9 +28,13 @@ export class ExpendController implements NestControllerInterface<typeof c> {
       },
     };
 
+    const orderBy = {
+      createdAt: 'desc' as const,
+    };
+
     return {
       status: 200 as const,
-      body: await this.expendService.getList({ where }),
+      body: await this.expendService.getList({ where, orderBy }),
     };
   }
 
