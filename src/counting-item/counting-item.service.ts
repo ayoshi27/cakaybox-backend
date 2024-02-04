@@ -25,9 +25,11 @@ export class CountingItemService {
       where,
       orderBy,
       include: {
-        payers: { select: { id: true } },
-        paymentMethods: { select: { id: true } },
-        budgets: { select: { id: true } },
+        payers: { select: { payer: { select: { id: true } } } },
+        paymentMethods: {
+          select: { paymentMethod: { select: { id: true } } },
+        },
+        budgets: { select: { budget: { select: { id: true } } } },
       },
     });
   }

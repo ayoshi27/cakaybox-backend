@@ -29,9 +29,12 @@ export class CustomCountingItemService {
           select: {
             sign: true,
             coefficient: true,
-            payers: { select: { id: true } },
-            paymentMethods: { select: { id: true } },
-            budgets: { select: { id: true } },
+            categories: { select: { category: { select: { id: true } } } },
+            payers: { select: { payer: { select: { id: true } } } },
+            paymentMethods: {
+              select: { paymentMethod: { select: { id: true } } },
+            },
+            budgets: { select: { budget: { select: { id: true } } } },
             processed: true,
           },
         },

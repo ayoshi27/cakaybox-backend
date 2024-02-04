@@ -39,7 +39,6 @@ export class ExpendController implements NestControllerInterface<typeof c> {
   }
 
   @TsRest(c.createExpend)
-  @Post()
   async createExpend(
     @TsRestRequest()
     { body }: RequestShapes['createExpend'],

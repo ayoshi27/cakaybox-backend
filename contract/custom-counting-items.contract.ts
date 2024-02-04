@@ -10,22 +10,30 @@ const CustomCountingItemsSchema = z.object({
       coefficient: z.number(),
       categories: z.array(
         z.object({
-          id: z.number(),
+          category: z.object({
+            id: z.number(),
+          }),
         }),
       ),
       payers: z.array(
         z.object({
-          id: z.number(),
+          payer: z.object({
+            id: z.number(),
+          }),
         }),
       ),
       budgets: z.array(
         z.object({
-          id: z.number(),
+          budget: z.object({
+            id: z.number(),
+          }),
         }),
       ),
-      PaymentMethods: z.array(
+      paymentMethods: z.array(
         z.object({
-          id: z.number(),
+          paymentMethod: z.object({
+            id: z.number(),
+          }),
         }),
       ),
       processed: z.array(z.boolean()),
