@@ -1,4 +1,4 @@
-import { Controller, Post, Param } from '@nestjs/common';
+import { Controller, Param } from '@nestjs/common';
 import { ExpendService } from './expend.service';
 
 import { contract } from 'contract/contract';
@@ -28,9 +28,7 @@ export class ExpendController implements NestControllerInterface<typeof c> {
       },
     };
 
-    const orderBy = {
-      createdAt: 'desc' as const,
-    };
+    const orderBy = [{ date: 'desc' as const }, { createdAt: 'desc' as const }];
 
     return {
       status: 200 as const,

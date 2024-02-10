@@ -21,6 +21,6 @@ async function bootstrap() {
   });
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openApiDocument));
 
-  await app.listen(3000);
+  await app.listen(3001);
 }
 bootstrap();

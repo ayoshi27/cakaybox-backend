@@ -15,7 +15,7 @@ export class ExpendService {
     take?: number;
     cursor?: Prisma.ExpendWhereUniqueInput;
     where?: Prisma.ExpendWhereInput;
-    orderBy?: Prisma.ExpendOrderByWithRelationInput;
+    orderBy?: Prisma.ExpendOrderByWithRelationInput[];
   }): Promise<Expend[]> {
     const { skip, take, cursor, where, orderBy } = params;
     return this.prisma.expend.findMany({
