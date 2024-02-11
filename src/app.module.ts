@@ -23,6 +23,7 @@ import { CountingItemController } from './counting-item/counting-item.controller
 import { CustomCountingItemModule } from './custom-counting-item/custom-counting-item.module';
 import { CustomCountingItemService } from './custom-counting-item/custom-counting-item.service';
 import { CustomCountingItemController } from './custom-counting-item/custom-counting-item.controller';
+import { FavoriteExpendItemModule } from './favorite-expend-item/favorite-expend-item.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { CustomCountingItemController } from './custom-counting-item/custom-coun
     PaymentMethodModule,
     CountingItemModule,
     CustomCountingItemModule,
+    FavoriteExpendItemModule,
   ],
   controllers: [
     AppController,

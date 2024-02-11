@@ -6,6 +6,7 @@ import { payersContract } from './payers.contract';
 import { paymentMethodsContract } from './payment-methods.contract';
 import { countingItemsContract } from './counting-items.contract';
 import { customCountingItemsContract } from './custom-counting-items.contract';
+import { favoriteExpendItemContract } from './favorite-expend-item.contract';
 
 const c = initContract();
 
@@ -17,4 +18,5 @@ export const contract = c.router({
   paymentMethods: paymentMethodsContract,
   countingItems: countingItemsContract,
   customCountingItems: customCountingItemsContract,
+  favoriteExpendItem: favoriteExpendItemContract,
 });
