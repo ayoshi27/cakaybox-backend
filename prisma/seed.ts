@@ -15,21 +15,21 @@ async function main() {
   //     },
   //   ]
   // });
-  await prisma.category.createMany({
-    data: [
-      { name: '自動車維持費', code: 'car' },
-      // { name: "雑貨", code: "goods" },
-      // { name: "お小遣い", code: "personal" },
-      // { name: "その他", code: "others" },
-      // { name: "貯金", code: "savings" },
-      // { name: "旅行", code: "travel" },
-      // { name: "イベント", code: "event" },
-      // { name: "毎月", code: "monthly" },
-      // { name: "電気代", code: "electric" },
-      // { name: "水道ガス", code: "utility" },
-      // { name: "ちばぎん", code: "chibagin" },
-    ],
-  });
+  // await prisma.category.createMany({
+  //   data: [
+  //     { name: '自動車維持費', code: 'car' },
+  //     // { name: "雑貨", code: "goods" },
+  //     // { name: "お小遣い", code: "personal" },
+  //     // { name: "その他", code: "others" },
+  //     // { name: "貯金", code: "savings" },
+  //     // { name: "旅行", code: "travel" },
+  //     // { name: "イベント", code: "event" },
+  //     // { name: "毎月", code: "monthly" },
+  //     // { name: "電気代", code: "electric" },
+  //     // { name: "水道ガス", code: "utility" },
+  //     // { name: "ちばぎん", code: "chibagin" },
+  //   ],
+  // });
   // await prisma.budget.createMany({
   //   data: [
   //     { name: "共同支出", code: "shared" },
@@ -147,7 +147,6 @@ async function main() {
   //     },
   //   ]
   // })
-
   // await prisma.countingItem.create({
   //   data: {
   //     name: 'サンプル集計項目1（共同visa明弘）',
@@ -936,7 +935,6 @@ async function main() {
   //     },
   //   },
   // });
-
   // await prisma.customCountingItem.create({
   //   data: {
   //     name: "李沙→明弘",
@@ -1150,7 +1148,49 @@ async function main() {
   //     },
   //   },
   // });
-
+  await prisma.favoriteExpendItem.createMany({
+    data: [
+      {
+        id: 0,
+        date: '',
+        code: 'aeonfood',
+        name: 'イオン食材',
+        price: 0,
+        description: 'イオン',
+        categoryId: 1,
+        payerId: 1,
+        budgetId: 1,
+        paymentMethodId: 1,
+        processed: false,
+      },
+      {
+        id: 1,
+        date: '',
+        code: 'akihiro7',
+        name: '明弘７',
+        price: 0,
+        description: '7:',
+        categoryId: 3,
+        payerId: 1,
+        budgetId: 2,
+        paymentMethodId: 1,
+        processed: false,
+      },
+      {
+        id: 2,
+        date: '',
+        code: 'akihiroprivate',
+        name: '明弘個人',
+        price: 0,
+        description: '',
+        categoryId: 3,
+        payerId: 1,
+        budgetId: 2,
+        paymentMethodId: 1,
+        processed: false,
+      },
+    ],
+  });
   // await prisma.countingItem.create({
   //   data: {
   //     name: '共同支出（明弘支払）',
