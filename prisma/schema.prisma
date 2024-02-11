@@ -51,6 +51,7 @@ model Category {
   limit                            Int                                @default(0)
   Expend                           Expend[]
   CategoryOnCustomCountingItemTerm CategoryOnCustomCountingItemTerm[]
+  FavoriteExpendItem               FavoriteExpendItem[]
 }
 
 model CategoryOnCustomCountingItemTerm {
@@ -75,6 +76,7 @@ model Payer {
   PayerCountingItem             PayerOnCountingItem[]
   PayerOnCustomCountingItemTerm PayerOnCustomCountingItemTerm[]
   PaymentMethod                 PaymentMethod[]
+  FavoriteExpendItem            FavoriteExpendItem[]
 }
 
 model PayerOnCountingItem {
@@ -110,6 +112,7 @@ model Budget {
   Expend                       Expend[]
   BudgetOnCountingItem         BudgetOnCountingItem[]
   BudgetCustomCountingItemTerm BudgetOnCustomCountingItemTerm[]
+  FavoriteExpendItem           FavoriteExpendItem[]
 }
 
 model BudgetOnCountingItem {
@@ -147,6 +150,7 @@ model PaymentMethod {
   PaymentMethodCustomCountingItemTerm PaymentMethodOnCustomCountingItemTerm[]
   Payer                               Payer                                   @relation(fields: [payerId], references: [id])
   payerId                             Int
+  FavoriteExpendItem                  FavoriteExpendItem[]
 }
 
 model PaymentMethodOnCountingItem {
@@ -210,4 +214,24 @@ model CustomCountingItem {
   name      String
   code      String                   @unique
   terms     CustomCountingItemTerm[]
+}
+
+model FavoriteExpendItem {
+  id              Int           @id @default(autoincrement())
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  code            String        @unique
+  name            String
+  price           Int
+  description     String
+  date            String
+  category        Category      @relation(fields: [categoryId], references: [id])
+  categoryId      Int
+  payer           Payer         @relation(fields: [payerId], references: [id])
+  payerId         Int
+  budget          Budget        @relation(fields: [budgetId], references: [id])
+  budgetId        Int
+  paymentMethod   PaymentMethod @relation(fields: [paymentMethodId], references: [id])
+  paymentMethodId Int
+  processed       Boolean       @default(false)
 }
