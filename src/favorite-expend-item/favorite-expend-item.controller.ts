@@ -1,6 +1,6 @@
 import { Controller } from '@nestjs/common';
 import { FavoriteExpendItemService } from './favorite-expend-item.service';
-import { contract } from 'contract/contract';
+import { contract } from '@ayoshi27/cakaybox-contract';
 import {
   nestControllerContract,
   NestControllerInterface,

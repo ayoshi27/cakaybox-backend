@@ -1,7 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { PaymentMethodService } from './payment-method.service';
 
-import { contract } from 'contract/contract';
+import { contract } from '@ayoshi27/cakaybox-contract';
 import {
   nestControllerContract,
   NestControllerInterface,

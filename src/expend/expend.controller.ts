@@ -1,7 +1,7 @@
 import { Controller, Param } from '@nestjs/common';
 import { ExpendService } from './expend.service';
 
-import { contract } from 'contract/contract';
+import { contract } from '@ayoshi27/cakaybox-contract';
 import {
   nestControllerContract,
   NestControllerInterface,

@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@ayoshi27/cakaybox-contract':
+    specifier: ^1.0.0
+    version: 1.0.0
   '@nestjs/common':
     specifier: ^10.0.0
     version: 10.0.0(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -177,6 +180,13 @@ packages:
     transitivePeerDependencies:
       - chokidar
     dev: true
+
+  /@ayoshi27/cakaybox-contract@1.0.0:
+    resolution: {integrity: sha512-70mKYsEHKSC2+iZM4QmAGfJJM1TS9GhNX6k26e60iB5SAQNgrfr6hNeXqxP3BgfIismvDx8CB3Zf6DWWgj68Ew==, tarball: https://npm.pkg.github.com/download/@ayoshi27/cakaybox-contract/1.0.0/80f984d6e63194f4b1cb727194e9c038c113f449}
+    dependencies:
+      '@ts-rest/core': 3.33.0(zod@3.22.4)
+      zod: 3.22.4
+    dev: false
 
   /@babel/code-frame@7.23.5:
     resolution: {integrity: sha512-CgH3s1a96LipHCmSUmYFPwY7MNx8C3avkq7i4Wl3cfa662ldtUe4VM1TPXX70pfmrlWTb6jLqTYrZyT2ZTJBgA==}

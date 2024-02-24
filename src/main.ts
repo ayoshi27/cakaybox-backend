@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { generateOpenApi } from '@ts-rest/open-api';
-import { contract } from 'contract/contract';
+import { contract } from '@ayoshi27/cakaybox-contract';
 import * as swaggerUi from 'swagger-ui-express';
 
 async function bootstrap() {
